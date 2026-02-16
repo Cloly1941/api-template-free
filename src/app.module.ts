@@ -11,6 +11,8 @@ import { AppService } from './app.service';
 
 // ** Soft Delete Plugin
 import { softDeletePlugin } from 'soft-delete-plugin-mongoose';
+import { UploadModule } from './upload/upload.module';
+import { ImagesModule } from './images/images.module';
 
 @Module({
   imports: [
@@ -28,6 +30,8 @@ import { softDeletePlugin } from 'soft-delete-plugin-mongoose';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    UploadModule,
+    ImagesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
